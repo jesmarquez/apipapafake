@@ -8,3 +8,8 @@ server.use(router)
 server.listen(8000, () => {
   console.log('JSON Server is running')
 })
+
+// Add custom routes before JSON Server router
+server.get('/foods', (req, res) => {
+    res.jsonp(req.query)
+  })
